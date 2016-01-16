@@ -267,28 +267,27 @@ It must now be running and you can see the logs.
 ## TODO (from most important to least)
 
 1. Rename globally the project to "*learn-a-foreign-language*" in `backend`
-2. ~~Squash all the commits into one, in `master`, tagged 0.1 and push to Github~~
-3. Release version 0.1 of the Android app on the Play Store
-4. In the Android app:
+2. Handle when the user has no words, and still uses the app
+3. In the Android app:
     * Put URLs in `app/constants` (find out how Redux projects do this)
     * Add padding to the modal for meanings
-5. In the front-end code:
+4. In the front-end code:
     * Add Google Play logo (with download link) on every HTML page
     * Add page titles
-6. Set up *Continuous Integration*:
+5. Set up *Continuous Integration*:
     - A branch `develop` for development purposes. When merging back into `master` OR when pushing tags (still to be chosen), compile on Travis-ci.org and publish automatically on the Play Store (see tutorials above)
-    - On every push (to any branch) and PR, compile the Android app, the front-end, and test the API
-7. In the Android app, use Redux
-8. In the Android app, use `await`/`async` instead of `Promises` (see https://facebook.github.io/react-native/docs/asyncstorage.html)
-9. Offline mode (SQLite clone of the backend)
-10. Fix [this issue](https://github.com/maxs15/react-native-modalbox/issues/34)
-11. [Add i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
-12. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
-13. Test-driven development in general
-14. Ultimately, check TODOs in whole project
-15. **Publish 1.0**
-16. [Reduce bundle.js size](https://lacke.mn/reduce-your-bundle-js-file-size/)
-17. Add a custom icon instead of the default Android one
+    - On every push (to any branch) and PR, bump the version number, compile the Android app, the front-end, and test the API
+6. In the Android app, use Redux
+7. In the Android app, use `await`/`async` instead of `Promises` (see https://facebook.github.io/react-native/docs/asyncstorage.html)
+8. Offline mode (SQLite clone of the backend)
+9. Fix [this issue](https://github.com/maxs15/react-native-modalbox/issues/34)
+10. [Add i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
+11. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
+12. Test-driven development in general
+13. Ultimately, check TODOs in whole project
+14. **Publish 1.0**
+15. [Reduce bundle.js size](https://lacke.mn/reduce-your-bundle-js-file-size/)
+16. Add a custom icon instead of the default Android one
 
 
 
