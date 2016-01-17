@@ -245,7 +245,7 @@ It must now be running and you can see the logs.
 
 - [Automating Publishing to the Play Store](https://github.com/codepath/android_guides/wiki/Automating-Publishing-to-the-Play-Store)
 - [PUBLISH TO GOOGLE PLAY - CONTINUOUS DELIVERY FOR ANDROID](http://blog.stablekernel.com/deploying-google-play-continuous-delivery-android-part-4/)
-
+- [DevOps on Android: From one Git push to production](http://jeremie-martinez.com/2016/01/14/devops-on-android/)
 
 ### For the front-end code (website)
 
@@ -256,8 +256,9 @@ It must now be running and you can see the logs.
 ## Features to come
 
 - Logout (available on Android and the website) - **0.2**
-- See the examples and further details when the word was swiped left (alongside the meanings) - **0.2**
+- See the word itself, its examples and further details when the word was swiped left (alongside the meanings) - **0.2**
 - Reset password (available on the website) - **0.3**
+- Send an email to new users to validate their email, containing a link to enable the account (API) - **0.3**
 - Users can create lists (available on Android) - **0.4**
 - Users can add words to one, many or zero list (available on the website) - **0.4**
 - Users can share their lists (available on the website) - **0.5**
@@ -277,6 +278,7 @@ It must now be running and you can see the logs.
 5. Set up *Continuous Integration*:
     - A branch `develop` for development purposes. When merging back into `master` OR when pushing tags (still to be chosen), compile on Travis-ci.org and publish automatically on the Play Store (see tutorials above)
     - On every push (to any branch) and PR, bump the version number, compile the Android app, the front-end, and test the API
+    - On every tag push, [recreate the changelog](http://keepachangelog.com/) from all the tags and push it
 6. In the Android app, use Redux
 7. In the Android app, use `await`/`async` instead of `Promises` (see https://facebook.github.io/react-native/docs/asyncstorage.html)
 8. Offline mode (SQLite clone of the backend)
@@ -285,10 +287,8 @@ It must now be running and you can see the logs.
 11. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
 12. Test-driven development in general
 13. Ultimately, check TODOs in whole project
-14. **Publish 1.0**
-15. [Reduce bundle.js size](https://lacke.mn/reduce-your-bundle-js-file-size/)
-16. Add a custom icon instead of the default Android one
-
+14. Add a custom icon instead of the default Android one
+15. **Publish 1.0**
 
 
 Woo, what a big REAMDE.md!
