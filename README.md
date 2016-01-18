@@ -303,6 +303,14 @@ It must now be running and you can see the logs.
     - On every push (to any branch) and PR, bump the version number, compile the Android app, the front-end, and test the API
     - On every tag push, [recreate the changelog](http://keepachangelog.com/) from all the tags and push it
 
+### 0.9
+
+1. Add a section 'word of the day' using one of the following:
+    - https://www.wordsapi.com/
+    - http://www.programmableweb.com/news/words-youll-love-these-2-apis/2009/11/10 (https://groups.google.com/forum/#!topic/wordnik-api/N0hPt9u9yMg might help)
+    - http://dictionary.reference.com/help/linking/wordoftheday-expert.html
+2. Make use of http://www.dictionaryapi.com/ and http://learnersdictionary.com/word-of-the-day
+
 ### 1.0
 
 1. Check TODOs in whole project
