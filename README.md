@@ -253,19 +253,9 @@ It must now be running and you can see the logs.
 - [React Tutorial: Creating a Simple Application Using React JS and Flux Architecture](https://www.codementor.io/reactjs/tutorial/react-js-flux-architecture-tutorial)
 
 
-## Features to come
+## TODO (from most important to least), sorted by upcoming releases
 
-- Logout (available on Android and the website) - **0.2**
-- See the word itself, its examples and further details when the word was swiped left (alongside the meanings) - **0.2**
-- Reset password (available on the website) - **0.3**
-- Send an email to new users to validate their email, containing a link to enable the account (API) - **0.3**
-- Users can create lists (available on Android) - **0.4**
-- Users can add words to one, many or zero list (available on the website) - **0.4**
-- Users can share their lists (available on the website) - **0.5**
-- When a word/expression is unknown to the user, add a button to open Google translate with the word or expression directly displayed (available on Android) - **0.6**
-
-
-## TODO (from most important to least)
+### 0.2
 
 1. Rename globally the project to "*learn-a-foreign-language*" in `backend`
 2. Handle when the user has no words, and still uses the app
@@ -275,20 +265,47 @@ It must now be running and you can see the logs.
 4. In the front-end code:
     * Add Google Play logo (with download link) on every HTML page
     * Add page titles
-5. Set up *Continuous Integration*:
+5. See the word itself, its examples and further details when the word was swiped left (alongside the meanings)
+6. Add ability to logout (available on Android and the website)
+7. Add some feedback with `Alert`
+
+### 0.3
+
+1. Reset password (available on the website)
+2. Send an email to new users to validate their email, containing a link to enable the account (API)
+3. Add a custom icon instead of the default Android one
+
+### 0.4
+
+1. Users can create lists (available on web) and choose which list to use in the Android app
+2. Users can add words to one, many or zero list (available on the website)
+
+### 0.5
+
+1. Users can share their lists (available on the website)
+2. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
+
+### 0.6
+
+1. When a word/expression is unknown to the user, add a button to open Google translate with the word or expression directly displayed (available on Android)
+2. In the Android app, use Redux
+
+### 0.7
+
+1. Offline mode (SQLite clone of the backend)
+2. [Add i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
+
+### 0.8
+
+1. Test-driven development in general
+2. Set up *Continuous Integration*:
     - A branch `develop` for development purposes. When merging back into `master` OR when pushing tags (still to be chosen), compile on Travis-ci.org and publish automatically on the Play Store (see tutorials above)
     - On every push (to any branch) and PR, bump the version number, compile the Android app, the front-end, and test the API
     - On every tag push, [recreate the changelog](http://keepachangelog.com/) from all the tags and push it
-6. In the Android app, use Redux
-7. In the Android app, use `await`/`async` instead of `Promises` (see https://facebook.github.io/react-native/docs/asyncstorage.html)
-8. Offline mode (SQLite clone of the backend)
-9. Fix [this issue](https://github.com/maxs15/react-native-modalbox/issues/34)
-10. [Add i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
-11. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
-12. Test-driven development in general
-13. Ultimately, check TODOs in whole project
-14. Add a custom icon instead of the default Android one
-15. **Publish 1.0**
+
+### 1.0
+
+1. Check TODOs in whole project
 
 
 Woo, what a big REAMDE.md!
