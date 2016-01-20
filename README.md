@@ -269,7 +269,7 @@ It must now be running and you can see the logs.
     * Add page titles
 5. ~~See the word itself + the meanings (one row per line) when the word was swiped left~~
 6. Add ability to logout (available on Android and the website)
-7. Add some feedback with `Alert`
+7. ~~Add some feedback with `Alert`~~
 8. Automatically redirect on the website when not logged in or when already logged in
 
 ### 0.3
@@ -324,7 +324,7 @@ It must now be running and you can see the logs.
 
 ### 2.0
 
-1. Add the Android app's capabilites to the website
+1. Add the Android app's capabilities to the website
 
 
 Woo, what a big REAMDE.md!

@@ -6,7 +6,7 @@ var {
   StyleSheet,
   AsyncStorage,
   Text,
-  Alert,
+  ToastAndroid,
   TextInput,
   TouchableOpacity,
   View,
@@ -61,7 +61,6 @@ var Page = React.createClass({
       var p2 = AsyncStorage.getItem("password").then(password => this.setState({password}));
 
       Promise.all([p1, p2]).then( success => {
-          console.log("hello");
           if (this.state.email && this.state.password) {
               this.login();
               console.log("login");
@@ -79,6 +78,11 @@ var Page = React.createClass({
   },
 
   login() {
+    if (!this.state.email || !this.state.password) {
+        ToastAndroid.show("Please fill in all the inputs", ToastAndroid.SHORT)
+        return
+    }
+
     this.setState({
       showSpinner: true,
       spinnerText: 'Authenticating you...'
@@ -97,7 +101,13 @@ var Page = React.createClass({
         });
       } else {
         this.setState({showSpinner: false});
-        console.warn('error');
+        console.log('error login');
+        var msg = "Unknown error";
+        try {
+          msg = JSON.parse(request.responseText).error;
+        }
+        catch(e) {}
+        ToastAndroid.show(msg, ToastAndroid.SHORT);
       }
     };
     request.open('POST', 'https://learnenglishbackend-romainpellerin.rhcloud.com/users/login');
