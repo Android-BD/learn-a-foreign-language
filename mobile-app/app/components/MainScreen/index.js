@@ -17,11 +17,13 @@ var SWIPE_THRESHOLD = 120;
 
 var Main = React.createClass({
   getInitialState() {
+    var word = {expression: "Swipe left or right", meanings: []};
     return {
       pan: new Animated.ValueXY(),
       enter: new Animated.Value(0.5),
       words: [],
-      word: {expression: "Swipe left or right"},
+      word: word,
+      oldWord: word,
       isModalOpen: false,
       meanings: ''
     }
@@ -75,8 +77,8 @@ var Main = React.createClass({
     console.log(known);
     if (!known) {
       this.setState({
-        isModalOpen: true,
-        meanings: this.state.word.meanings ? this.state.word.meanings.join('\n') : 'Swipe it down'
+        oldWord: this.state.word,
+        isModalOpen: true
       });
     }
   },
@@ -180,7 +182,10 @@ var Main = React.createClass({
         </Animated.View>
 
         <Modal isOpen={this.state.isModalOpen} onClosed={this.modalClosed} style={styles.modal} position={"center"} >
-          <Text style={styles.textModal}>{this.state.meanings}</Text>
+          <Text style={styles.titleModal}>{this.state.oldWord.expression}</Text>
+          <View style={styles.textModalWrapper}>
+            <Text style={styles.textModal}>{this.state.oldWord.meanings.join('\n\n')}</Text>
+          </View>
         </Modal>
       </View>
     );
@@ -235,14 +240,27 @@ var styles = StyleSheet.create({
     fontSize: 16,
     color: 'red',
   },
+  titleModal: {
+    color: 'black',
+    fontSize: 26,
+    textAlign: 'center',
+    fontWeight: 'bold'
+  },
+  textModalWrapper: {
+    flex: 1,
+    justifyContent: 'center' // vertically centered
+  },
   textModal: {
-    color: "black",
-    fontSize: 22
+    color: 'black',
+    fontSize: 22,
+    textAlign: 'center'
   },
   modal: {
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 300
+    height: 300,
+    padding: 20
   },
 });
 

@@ -263,11 +263,11 @@ It must now be running and you can see the logs.
 2. ~~Handle when the user has no words, and still uses the app~~
 3. In the Android app:
     * Put URLs in `app/constants` (find out how Redux projects do this)
-    * Add padding to the modal for meanings
+    * ~~Add padding to the modal for meanings~~
 4. In the front-end code:
     * Add Google Play logo (with download link) on every HTML page
     * Add page titles
-5. See the word itself + the meanings (one row per line) when the word was swiped left (alongside the meanings)
+5. ~~See the word itself + the meanings (one row per line) when the word was swiped left~~
 6. Add ability to logout (available on Android and the website)
 7. Add some feedback with `Alert`
 8. Automatically redirect on the website when not logged in or when already logged in
@@ -290,6 +290,7 @@ It must now be running and you can see the logs.
 
 1. Users can share their lists (available on the website)
 2. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
+3. Make the modal scrollable if too many meanings, and add an X button on top right to close it (see the example on the official repo of the module)
 
 ### 0.6
 
