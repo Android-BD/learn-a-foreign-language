@@ -95,13 +95,13 @@ CREATE OR REPLACE FUNCTION get_words(_users_id UUID)
     AS $$
     BEGIN
         RETURN QUERY
-        SELECT WORDS.words_id, WORDS.expression, WORDS.meanings, WORDS.examples, WORDS.further_details, COALESCE(USERS_SCORES.score,0) as score
+        SELECT WORDS.words_id, WORDS.expression, WORDS.meanings, WORDS.examples, WORDS.further_details, COALESCE(USERS_SCORES.score,-10000) as score
         FROM WORDS
         LEFT OUTER JOIN USERS_SCORES
         ON WORDS.words_id = USERS_SCORES.words_fk AND USERS_SCORES.users_fk = CAST(_users_id as uuid)
         WHERE WORDS.added_by = CAST(_users_id as uuid)
         --WHERE language = (SELECT preferred_language from users where users_id = CAST($1 as uuid)) -- TODO list
-        ORDER BY score ASC;
+        ORDER BY score ASC, added_at ASC;
     END;
     $$
 ;
