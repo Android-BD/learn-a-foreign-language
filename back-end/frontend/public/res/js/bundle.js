@@ -24941,17 +24941,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	//import GroupTranslation from './GroupTranslation.jsx';
-
 	exports.default = _react2.default.createClass({
 	    displayName: 'FormAddWord',
 
 	    getInitialState: function getInitialState() {
 	        return {
 	            word: '',
-	            meanings: [],
-	            examples: [],
-	            further_details: []
+	            meanings: []
 	        };
 	    },
 	    handleSubmit: function handleSubmit(event) {
@@ -24973,19 +24969,11 @@
 	        };
 	        req.send(JSON.stringify({
 	            expression: this.state.word,
-	            meanings: this.state.meanings,
-	            examples: this.state.examples,
-	            further_details: this.state.further_details
+	            meanings: this.state.meanings
 	        }));
 	    },
 	    changeMeanings: function changeMeanings(meanings) {
 	        this.setState({ meanings: meanings });
-	    },
-	    changeExamples: function changeExamples(examples) {
-	        this.setState({ examples: examples });
-	    },
-	    changeDetails: function changeDetails(details) {
-	        this.setState({ further_details: details });
 	    },
 	    changeWord: function changeWord(word) {
 	        this.setState({ word: word });
@@ -25016,31 +25004,9 @@
 	            _react2.default.createElement(
 	                'h4',
 	                null,
-	                'One example per line'
+	                'One per line'
 	            ),
 	            _react2.default.createElement(_TextArea2.default, { onChange: this.changeMeanings }),
-	            _react2.default.createElement(
-	                'h3',
-	                null,
-	                'Add examples of use (optional)'
-	            ),
-	            _react2.default.createElement(
-	                'h4',
-	                null,
-	                'One example per line'
-	            ),
-	            _react2.default.createElement(_TextArea2.default, { onChange: this.changeExamples }),
-	            _react2.default.createElement(
-	                'h3',
-	                null,
-	                'Add further details (URLs) (optional)'
-	            ),
-	            _react2.default.createElement(
-	                'h4',
-	                null,
-	                'One example per line'
-	            ),
-	            _react2.default.createElement(_TextArea2.default, { onChange: this.changeDetails }),
 	            _react2.default.createElement('br', null),
 	            _react2.default.createElement(_ButtonAdd2.default, { value: 'Add it!', onClick: this.submit })
 	        );

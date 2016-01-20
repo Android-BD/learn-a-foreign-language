@@ -3,15 +3,12 @@ import React from 'react';
 import InputWord from './InputWord.jsx';
 import ButtonAdd from './ButtonAdd.jsx';
 import TextArea from './TextArea.jsx';
-//import GroupTranslation from './GroupTranslation.jsx';
 
 export default React.createClass({
     getInitialState: function() {
         return {
             word: '',
-            meanings: [],
-            examples: [],
-            further_details: []
+            meanings: []
         };
     },
     handleSubmit: function(event) {
@@ -33,19 +30,11 @@ export default React.createClass({
         };
         req.send(JSON.stringify({
             expression: this.state.word,
-            meanings: this.state.meanings,
-            examples: this.state.examples,
-            further_details: this.state.further_details
+            meanings: this.state.meanings
         }));
     },
     changeMeanings: function(meanings) {
         this.setState({meanings: meanings});
-    },
-    changeExamples: function(examples) {
-        this.setState({examples: examples});
-    },
-    changeDetails: function(details) {
-        this.setState({further_details: details});
     },
     changeWord: function(word) {
         this.setState({word: word});
@@ -62,16 +51,8 @@ export default React.createClass({
                 <InputWord id="new_word" placeholder="New word or expression" onChange={this.changeWord} />
 
                 <h3>Add meanings (required)</h3>
-                <h4>One example per line</h4>
+                <h4>One per line</h4>
                 <TextArea onChange={this.changeMeanings} />
-
-                <h3>Add examples of use (optional)</h3>
-                <h4>One example per line</h4>
-                <TextArea onChange={this.changeExamples} />
-                
-                <h3>Add further details (URLs) (optional)</h3>
-                <h4>One example per line</h4>
-                <TextArea onChange={this.changeDetails} />
 
                 <br />
 

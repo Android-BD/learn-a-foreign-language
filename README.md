@@ -265,7 +265,7 @@ It must now be running and you can see the logs.
 4. In the front-end code:
     * Add Google Play logo (with download link) on every HTML page
     * Add page titles
-5. See the word itself, its examples and further details when the word was swiped left (alongside the meanings)
+5. See the word itself + the meanings (one row per line) when the word was swiped left (alongside the meanings)
 6. Add ability to logout (available on Android and the website)
 7. Add some feedback with `Alert`
 
@@ -279,6 +279,7 @@ It must now be running and you can see the logs.
 
 1. Users can create lists (available on web) and choose which list to use in the Android app
 2. Users can add words to one, many or zero list (available on the website)
+3. Detect URL in meanings and make them clickable in the Android app
 
 ### 0.5
 
@@ -314,6 +315,10 @@ It must now be running and you can see the logs.
 ### 1.0
 
 1. Check TODOs in whole project
+
+### 2.0
+
+1. Add the Android app's capabilites to the website
 
 
 Woo, what a big REAMDE.md!
