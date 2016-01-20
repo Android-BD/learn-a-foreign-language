@@ -274,6 +274,7 @@ It must now be running and you can see the logs.
 1. Reset password (available on the website)
 2. Send an email to new users to validate their email, containing a link to enable the account (API)
 3. Add a custom icon instead of the default Android one
+4. Store the token in the app's preferences and test it on startup instead of sending the credentials
 
 ### 0.4
 

@@ -1,22 +1,19 @@
 {
-  "name": "learn-english-backend",
-  "version": "1.0.0",
-  "description": "Frontend for learn-english-backend",
+  "name": "learn-a-foreign-language-backend-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Website of an Android application to learn a foreign language",
+  "author": {
+    "name": "Romain Pellerin",
+    "email": "contact@romainpellerin.eu",
+    "url": "http://romainpellerin.eu/"
+  },
+  "homepage": "http://romainpellerin.eu",
   "main": "index.jsx",
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base public --port 8081"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rpellerin/learn-english-backend.git"
-  },
-  "author": "Romain Pellerin <contact@romainpellerin.eu>",
-  "license": "Beerware",
-  "bugs": {
-    "url": "https://github.com/rpellerin/learn-english-backend/issues"
-  },
-  "homepage": "https://github.com/rpellerin/learn-english-backend#readme",
   "dependencies": {
     "history": "^1.17.0",
     "react": "^0.14.5",

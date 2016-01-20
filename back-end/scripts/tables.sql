@@ -1,8 +1,8 @@
 -- BACKUP
 
-\copy WORDS TO './words.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
-\copy USERS TO './users.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
-\copy USERS_SCORES TO './users_scores.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy WORDS TO '/tmp/words.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy USERS TO '/tmp/users.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy USERS_SCORES TO '/tmp/users_scores.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
 
 DROP EXTENSION IF EXISTS "uuid-ossp" CASCADE;
 CREATE EXTENSION "uuid-ossp"; -- for UUIDs
@@ -189,6 +189,6 @@ REVOKE ALL ON ALL TABLES IN SCHEMA public FROM public;
 
 -- POPULATING
 
-\copy USERS FROM './users.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
-\copy WORDS FROM './words.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
-\copy USERS_SCORES FROM './users_scores.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy USERS FROM '/tmp/users.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy WORDS FROM '/tmp/words.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy USERS_SCORES FROM '/tmp/users_scores.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
