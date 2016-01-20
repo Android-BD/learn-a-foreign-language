@@ -37,12 +37,12 @@ exports.get = function(req, res, next) {
 };
 
 exports.create = function(req, res, next) {
-    const args = [req.body.expression, req.body.meanings, req.body.examples, req.body.further_details, req.users_id];
+    const args = [req.body.expression, req.body.meanings, req.users_id];
 
     if (req.body && args.reduce(((prev, curr) => prev && curr), true) && req.body.meanings.length > 0) {
         DB.connection()
             .then( client => {
-                client.query("select add_word($1,$2,$3,$4,$5)", args, (err, result) => {
+                client.query("select add_word($1,$2,$3)", args, (err, result) => {
                     client.close();
                     if (err) {
                         console.log('[ERROR]')

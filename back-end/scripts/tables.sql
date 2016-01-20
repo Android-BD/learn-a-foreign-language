@@ -2,7 +2,7 @@
 
 \copy WORDS TO './words.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
 \copy USERS TO './users.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
-
+\copy USERS_SCORES TO './users_scores.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
 
 DROP EXTENSION IF EXISTS "uuid-ossp" CASCADE;
 CREATE EXTENSION "uuid-ossp"; -- for UUIDs
@@ -16,10 +16,8 @@ CREATE TABLE WORDS (
     words_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     expression TEXT NOT NULL, -- The actual word or expression
     meanings TEXT ARRAY NOT NULL,
-    examples TEXT ARRAY, -- Examples of phrases using this word
-    further_details TEXT ARRAY, -- Websites giving more details
     added_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
-    added_by UUID REFERENCES USERS,
+    added_by UUID REFERENCES USERS NOT NULL,
     updated_at TIMESTAMP WITH TIME ZONE,
     UNIQUE (expression, added_by)
 );
@@ -51,6 +49,7 @@ CREATE TABLE USERS_SCORES (
 
 ------------- TABLE USERS_RESET_PWD -------------
 
+-- TODO
 DROP TABLE IF EXISTS USERS_RESET_PWD CASCADE;
 CREATE TABLE USERS_RESET_PWD (
     users_id UUID REFERENCES USERS PRIMARY KEY,
@@ -89,13 +88,13 @@ CREATE OR REPLACE FUNCTION signup(_email text, _pwd text)
 
 DROP FUNCTION IF EXISTS get_words(UUID) CASCADE;
 CREATE OR REPLACE FUNCTION get_words(_users_id UUID)
-    RETURNS TABLE(words_id uuid, expression text, meanings text array, examples text array, further_details text array, score integer)
+    RETURNS TABLE(words_id uuid, expression text, meanings text array, score integer)
     LANGUAGE plpgsql
     SECURITY DEFINER
     AS $$
     BEGIN
         RETURN QUERY
-        SELECT WORDS.words_id, WORDS.expression, WORDS.meanings, WORDS.examples, WORDS.further_details, COALESCE(USERS_SCORES.score,-10000) as score
+        SELECT WORDS.words_id, WORDS.expression, WORDS.meanings, COALESCE(USERS_SCORES.score,-10000) as score
         FROM WORDS
         LEFT OUTER JOIN USERS_SCORES
         ON WORDS.words_id = USERS_SCORES.words_fk AND USERS_SCORES.users_fk = CAST(_users_id as uuid)
@@ -122,15 +121,15 @@ CREATE OR REPLACE FUNCTION search_words(_word text, _users_id UUID)
     $$
 ;
 
-DROP FUNCTION IF EXISTS add_word(text, text array, text array, text array, UUID) CASCADE;
-CREATE OR REPLACE FUNCTION add_word(_expression text, _meanings text array, _examples text array, _further_details text array, _added_by UUID, OUT _words_id UUID)
+DROP FUNCTION IF EXISTS add_word(text, text array, UUID) CASCADE;
+CREATE OR REPLACE FUNCTION add_word(_expression text, _meanings text array, _added_by UUID, OUT _words_id UUID)
     RETURNS UUID
     LANGUAGE plpgsql
     SECURITY DEFINER
     AS $$
     BEGIN
-        INSERT INTO WORDS ("expression", "meanings", "examples", "further_details", "added_by")
-        VALUES (_expression, _meanings, _examples, _further_details, _added_by)
+        INSERT INTO WORDS ("expression", "meanings", "added_by")
+        VALUES (_expression, _meanings, _added_by)
         RETURNING words_id into _words_id;
     END;
     $$
@@ -192,3 +191,4 @@ REVOKE ALL ON ALL TABLES IN SCHEMA public FROM public;
 
 \copy USERS FROM './users.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
 \copy WORDS FROM './words.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
+\copy USERS_SCORES FROM './users_scores.csv' WITH DELIMITER ',' CSV HEADER QUOTE '"';
