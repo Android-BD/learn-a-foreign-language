@@ -4,6 +4,7 @@ import React, {
   StyleSheet,
   Text,
   View,
+  Alert,
   Animated,
   Component,
   PanResponder
@@ -33,8 +34,9 @@ var Main = React.createClass({
         return;
       }
       if (request.status === 200) {
+        var w = JSON.parse(request.responseText).words
         this.setState({
-          words: JSON.parse(request.responseText).words
+          words: ((w.length > 0) ? w : [{expression: 'No words added'}])
         });
         callback && callback();
       } else {

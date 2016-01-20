@@ -10,7 +10,7 @@
   },
   "homepage": "http://romainpellerin.eu/",
   "scripts": {
-    "start": "react-native start"
+    "dev": "react-native run-android && adb reverse tcp:8081 tcp:8081 && react-native start"
   },
   "dependencies": {
     "react-native": "^0.18.0-rc",

@@ -120,6 +120,8 @@ Finally, you can **run the API** code using [Express](http://expressjs.com/), lo
     3. Then:
 
         ```bash
+        npm run dev
+        # OR
         react-native run-android
         adb reverse tcp:8081 tcp:8081
         react-native start
@@ -257,8 +259,8 @@ It must now be running and you can see the logs.
 
 ### 0.2
 
-1. Rename globally the project to "*learn-a-foreign-language*" in `backend`
-2. Handle when the user has no words, and still uses the app
+1. ~~Rename globally the project to "*learn-a-foreign-language*" in `backend`~~
+2. ~~Handle when the user has no words, and still uses the app~~
 3. In the Android app:
     * Put URLs in `app/constants` (find out how Redux projects do this)
     * Add padding to the modal for meanings
@@ -268,6 +270,7 @@ It must now be running and you can see the logs.
 5. See the word itself + the meanings (one row per line) when the word was swiped left (alongside the meanings)
 6. Add ability to logout (available on Android and the website)
 7. Add some feedback with `Alert`
+8. Automatically redirect on the website when not logged in or when already logged in
 
 ### 0.3
 
@@ -275,6 +278,7 @@ It must now be running and you can see the logs.
 2. Send an email to new users to validate their email, containing a link to enable the account (API)
 3. Add a custom icon instead of the default Android one
 4. Store the token in the app's preferences and test it on startup instead of sending the credentials
+5. Android: hide keyboard after successfully logging in
 
 ### 0.4
 
