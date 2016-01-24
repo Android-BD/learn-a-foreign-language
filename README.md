@@ -288,7 +288,7 @@ It must now be running and you can see the logs.
 
 ### 0.5
 
-1. Users can share their lists (available on the website)
+1. Users can share their lists (available on the website) in read-only OR edit mode
 2. [Add a doc for the API](http://blog.romainpellerin.eu/documentation.html)
 3. Make the modal scrollable if too many meanings, and add an X button on top right to close it (see the example on the official repo of the module)
 
