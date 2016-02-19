@@ -79,9 +79,11 @@ var main = function(error,data) {
     var array = data.split('\n');
     array = array.map(line => {
         var tmp = line.split('=').map(side => side.trim());
+        //console.log(tmp[0])
+        //console.log(tmp[1])
         return {
             expression: tmp[0],
-            meanings: [tmp[1]]
+            meanings: (tmp[1]).split("//")
         }
     });
     

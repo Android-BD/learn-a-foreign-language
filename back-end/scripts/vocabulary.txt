@@ -1,3 +1,5 @@
+a crate = une caisse, un cageot, une cagette, une boite
+dull = terne, ennuyeux, stupid
 the grief = deep sorrow, especially that caused by someone's death
 to grieve = suffer grief
 to mourn = pleurer la mort de quelqu'un, faire le deuil
@@ -771,7 +773,7 @@ slip them into the conversation = insérer quelque chose dans la conversation
 to rely on = compter sur, appuyer sur (pas au sens physique)
 ecosystem = éco-système
 hugely = énormément
-a cruise une croisière
+a cruise = une croisière
 at the moment = en ce moment
 willpower, willingness = volonté
 steep = raide, abrupt
