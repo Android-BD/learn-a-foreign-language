@@ -1,3 +1,6 @@
+outright = carrément, franchement, complétement//absolu, pur, total, complet
+to boast = fanfaronner, talk with excessive pride and self-satisfaction about one's achievements, possessions, or abilities
+retaliation = représailles, vengeance, the action of returning a military attack, counterattack
 with hindsight = avec sagesse retrospective, en y repensant (ex: with hindsight , I should never have gone)
 a crane = une grue de chantier
 utterly = totalement, complètement
@@ -1136,7 +1139,7 @@ a wrist = un poignet
 continuously = continuellement
 ironic = ironique
 neatly = soignement
-(to) busy = (occuper) occupé 
+(to) busy = (occuper) occupé
 irony = ironie
 to keep on with something = to continue with something
 keep/lose one's temper = garder/perdre son calme/sang-froid
