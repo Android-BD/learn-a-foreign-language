@@ -1,3 +1,4 @@
+a vessel = a ship, a large boat
 a binder = un classeur
 sketchy = vague, incomplet, not thorough or detailed
 a pier = une jetée//un pilier
