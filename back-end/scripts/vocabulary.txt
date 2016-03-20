@@ -1,3 +1,6 @@
+a lorry, a truck = un camion
+to grind = moudre, broyer
+it's legible, readable = c'est lisible
 a vessel = a ship, a large boat
 a binder = un classeur
 sketchy = vague, incomplet, not thorough or detailed
@@ -1166,7 +1169,7 @@ liven up something, make lively something = rendre vivant quelque chose
 merely, mere = simplement, simple
 guesswork = conjectures, hypothèses
 to come up = en arriver à, to come near, to turn out to be
-barely = à peine
+barely, scarcely = à peine
 altogether = complétement, entièrement
 to accelerate, to speed up = accélérer
 tremendous = énorme, immense
