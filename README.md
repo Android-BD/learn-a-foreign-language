@@ -73,7 +73,7 @@ Finally, you can **run the API** code using [Express](http://expressjs.com/), lo
     sudo apt-get install build-essential \
                          autoconf \
                          automake \
-                         setuptools \
+                         python-setuptools \
                          inotify-tools
     ```
 
