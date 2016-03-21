@@ -321,6 +321,7 @@ It must now be running and you can see the logs.
 ### 1.0
 
 1. Check TODOs in whole project
+2. Clean the vocabulary in `back-end/scripts/vocabulary.txt`: add `//` between two distinct definitions of a word
 
 ### 2.0
 
